@@ -1,0 +1,99 @@
+{
+  "max_open_trades": 5,
+  "stake_currency": "USDT",
+  "stake_amount": "unlimited",
+  "tradable_balance_ratio": 0.99,
+  "fiat_display_currency": "USD",
+  "timeframe": "5m",
+  "dry_run": false,
+  "dry_run_wallet": 1000,
+  "cancel_open_orders_on_exit": false,
+  "unfilledtimeout": {
+    "buy": 10,
+    "sell": 30,
+    "unit": "minutes"
+},
+  "bid_strategy": {
+      "price_side": "ask",
+      "ask_last_balance": 0.0,
+      "use_order_book": false,
+      "order_book_top": 1,
+      "check_depth_of_market": {
+          "enabled": false,
+          "bids_to_ask_delta": 1
+      }
+  },
+  "ask_strategy": {
+      "price_side": "bid",
+      "use_order_book": false,
+      "order_book_min": 1,
+      "order_book_max": 1
+  },
+  "exchange": {
+      "name": "binance",
+      "key": "c4oTJCiWOdOQYd4S6SAiyowQkasfuZ8vHuA21AbbUgwlhf40HAV4S4Rrd1QGnIOx",
+      "secret": "D9OAhKUTCLoiAWYq4DXsbPkGW5NiSncs78pstRO1eiVM0xyGgjZmoRQfn6VAJzKM",
+      "ccxt_config": {"enableRateLimit": true},
+      "ccxt_async_config": {
+          "enableRateLimit": true,
+          "rateLimit": 200
+      },
+      "pair_whitelist":[
+    ]
+  },
+  "pairlists": [
+    {
+      "method": "VolumePairList",
+      "number_assets": 80,
+      "sort_key": "quoteVolume",
+      "refresh_period": 1800
+    },
+    {"method": "AgeFilter", "min_days_listed": 14},
+    {"method": "SpreadFilter", "max_spread_ratio": 0.005},
+    {
+      "method": "RangeStabilityFilter",
+      "lookback_days": 3,
+      "min_rate_of_change": 0.05,
+      "refresh_period": 1800
+    },
+    {
+      "method": "VolatilityFilter",
+      "lookback_days": 3,
+      "min_volatility": 0.02,
+      "max_volatility": 0.75,
+      "refresh_period": 43200
+    },
+    {"method": "ShuffleFilter"}
+  ],
+  "dataformat_ohlcv": "jsongz",
+  "dataformat_trades": "jsongz",
+  "telegram": {
+      "enabled": true,
+      "token": "2131859959:AAEJnFQOkK7cv907Srm4oMXOUGttyYs7eGw",
+      "chat_id": "430774199",
+      "notification_settings": {
+        "status": "silent",
+        "warning": "on",
+        "startup": "off",
+        "buy": "silent",
+        "sell": {
+            "roi": "silent",
+            "emergency_sell": "on",
+            "force_sell": "on",
+            "sell_signal": "silent",
+            "trailing_stop_loss": "on",
+            "stop_loss": "on",
+            "stoploss_on_exchange": "on",
+            "custom_sell": "silent"
+        },
+        "buy_cancel": "silent",
+        "sell_cancel": "on",
+        "buy_fill": "off",
+        "sell_fill": "off",
+        "protection_trigger": "off",
+        "protection_trigger_global": "on"
+    },
+    "reload": true,
+    "balance_dust_level": 0.01
+  }
+}
