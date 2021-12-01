@@ -53,3 +53,5 @@ services:
       --strategy NostalgiaForInfinityX
       --config user_data/data/pairlists.json
       --config user_data/data/blacklist-binance.json
+    environment:
+      - FREQTRADE__TELEGRAM__TOKEN=TEST
