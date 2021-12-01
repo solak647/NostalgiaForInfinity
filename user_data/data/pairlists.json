@@ -69,7 +69,6 @@
   "dataformat_trades": "jsongz",
   "telegram": {
       "enabled": true,
-      "token": "2131859959:AAEJnFQOkK7cv907Srm4oMXOUGttyYs7eGw",
       "chat_id": "430774199",
       "notification_settings": {
         "status": "silent",
